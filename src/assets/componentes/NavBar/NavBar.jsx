@@ -58,7 +58,7 @@ export const NavBar = () => {
                       to="/login"
                       onClick={handleLoginClick} 
                     >
-                      Login
+                      Iniciar Sesion
                     </Button>
                   </>
                 )}

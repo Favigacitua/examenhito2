@@ -31,7 +31,8 @@
   width: 10rem;
   height: 2.5rem;
   transition: background-color 0.3s ease, color 0.3s ease;
-  margin-left: 18rem;
+  
+  
 }
 
 .navbar .nav-link {
@@ -59,10 +60,21 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  .loginButton {
+    margin-left: 13rem;
+    
+  }
 }
 
 @media (max-width: 767.98px) {
   .navbar-custom {
     padding: 0.5rem 1rem;
+  }
+  .loginButton {
+    margin-left: 0.1rem;
+    margin-top: 2rem;
+   
+    
   }
 }
