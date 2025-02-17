@@ -11,9 +11,10 @@ import { Login } from './assets/vistas/Login/Login'
 import { Perfil } from './assets/vistas/Perfil/Perfil'
 import { Register } from './assets/vistas/Register/Register'
 import { NotFound } from './assets/vistas/NotFound/NotFound'
-import { NavBar } from './assets/componentes/Navbar/Navbar'
+import { NavBar } from './assets/componentes/NavBar/NavBar'
 import { Footer } from './assets/componentes/Footer/Footer'
 import { Context } from './Context/Context'
+import { UserProvider } from './Context/UserContext'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,8 +22,9 @@ function App() {
   return (
     <>
     <Context>
-      <NavBar/>
-      <Routes>
+      <UserProvider>
+    <NavBar/>
+      <Routes>     
         <Route path='/' element= {<Inicio/>}/>
         <Route path='/contacto' element={<Contacto/>} />
         <Route path='/destino' element={< Destino/>} />
@@ -35,6 +37,7 @@ function App() {
         <Route path='*' element={< NotFound/>} />
       </Routes>
       <Footer/>
+      </UserProvider>
       </Context>
     </>
   ) 
