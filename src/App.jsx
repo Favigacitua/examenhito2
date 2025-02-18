@@ -15,17 +15,21 @@ import { NavBar } from './assets/componentes/NavBar/NavBar'
 import { Footer } from './assets/componentes/Footer/Footer'
 import { Context } from './Context/Context'
 import { UserProvider } from './Context/UserContext'
+import Home from './assets/componentes/Home/Home'
+import { useLocation } from 'react-router-dom';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const location = useLocation(); 
 
   return (
     <>
     <Context>
       <UserProvider>
-    <NavBar/>
+      {location.pathname !== '/' && <NavBar />}
+      
       <Routes>     
-        <Route path='/' element= {<Inicio/>}/>
+        <Route path='/' element= {<><Home/><Inicio/></>}/>
         <Route path='/contacto' element={<Contacto/>} />
         <Route path='/destino' element={< Destino/>} />
         <Route path='/destinos' element={< Destinos/>} />

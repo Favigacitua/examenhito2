@@ -55,7 +55,20 @@
 
 
 
-@media (min-width: 768px) {
+
+@media (max-width: 1199px) {
+  .navbar-custom {
+    padding: 0.5rem 1rem;
+  }
+  .loginButton {
+    margin-left: 0.1rem;
+    margin-top: auto;
+   
+    
+  }
+}
+
+@media (min-width:1200px) {
   .navbar-custom .nav-link {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -67,14 +80,3 @@
   }
 }
 
-@media (max-width: 767.98px) {
-  .navbar-custom {
-    padding: 0.5rem 1rem;
-  }
-  .loginButton {
-    margin-left: 0.1rem;
-    margin-top: 2rem;
-   
-    
-  }
-}

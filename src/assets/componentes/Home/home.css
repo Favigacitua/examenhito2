@@ -1,0 +1,39 @@
+.homestyle {
+    background-image: url('/home.png');
+    background-size: contain;
+    background-position: top left;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+  }
+
+  .formulario-contenedor {
+    display: block !important; /* Bloquear la herencia de flex */
+    width: 100%;
+}
+
+
+.bajadatitulo {
+ margin-left: 3rem;
+ font-weight: lighter;
+ font-size: 8px;
+ margin-bottom: 2px;
+
+}
+
+.titulo {
+margin-left: 3rem;
+font-weight: lighter;
+
+}
+
+.formulariofecha{
+  margin-left: 3rem;
+  padding-left: 0rem;
+}
+
