@@ -25,13 +25,14 @@ export const Home = () => {
   return (
     <div className='homestyle'>
       <div>
-        <Navbar expand="md" style={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
+        <Navbar expand="md"  className="navbarhome" style={{ backgroundColor: 'transparent', boxShadow: 'none', paddingBottom:'0px' }}>
           <Container fluid style={{ padding: '0px', marginLeft: '1rem', marginRight: '1rem', width: '100vw', height: '2rem' }}>
           <Navbar.Brand
+          
             as={NavLink}
             to="/"
             end
-            className={({ isActive }) => isActive ? "navbar-brand active-link" : "navbar-brand"}
+            className= {({ isActive }) => isActive ? "navbar-brand active-link" : "navbar-brand"}
             style={{ fontWeight: 'bold', color:'white' }}
           >
             Nautilus Prestige
@@ -107,17 +108,18 @@ export const Home = () => {
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
-
-        <div>
-          <img src='/viajaconnosotros.png' alt='viaja-con-nosotros' style={{ width: '12rem', marginLeft: '1rem' }} />
-        </div>
-        <div>
-          <h3 className='titulo'>Vamonos!</h3>
-          <p className='bajadatitulo'>Elije una fecha y nosotros cumplimos tus sueños</p>
-        </div>
-        <div className='formulariofecha'>
-          <FormularioFecha />
-        </div>
+        <div className='bajadanavbar'>
+  <div>
+    <img src='/viajaconnosotros.png' alt='viaja-con-nosotros' className='viajaconnosotros' />
+  </div>
+  <div className='contenttext'>
+    <img src='/vamonos.png' alt='vamonos' className='vamonos' />
+    <p className='bajadatitulo'>Elije una fecha y nosotros cumplimos tus sueños</p>
+  </div>
+  <div className='formulariofecha'>
+    <FormularioFecha />
+  </div>
+</div>
       </div>
     </div>
   );

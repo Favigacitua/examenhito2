@@ -18,7 +18,7 @@ const FormularioFecha = () => {
   };
 
   return (
-    <Container className='formulario' style={{width:'16rem', margin:'0px'}}>
+    <Container className='formulario' >
       {/* Formulario para destino */}
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="destino" className='destino'>
