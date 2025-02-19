@@ -11,19 +11,25 @@ import { Login } from './assets/vistas/Login/Login'
 import { Perfil } from './assets/vistas/Perfil/Perfil'
 import { Register } from './assets/vistas/Register/Register'
 import { NotFound } from './assets/vistas/NotFound/NotFound'
-import { NavBar } from './assets/componentes/Navbar/Navbar'
+import { NavBar } from './assets/componentes/NavBar/NavBar'
 import { Footer } from './assets/componentes/Footer/Footer'
 import { Context } from './Context/Context'
+import { UserProvider } from './Context/UserContext'
+import Home from './assets/componentes/Home/Home'
+import { useLocation } from 'react-router-dom';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const location = useLocation(); 
 
   return (
     <>
     <Context>
-      <NavBar/>
-      <Routes>
-        <Route path='/' element= {<Inicio/>}/>
+      <UserProvider>
+      {location.pathname !== '/' && <NavBar />}
+      
+      <Routes>     
+        <Route path='/' element= {<><Home/><Inicio/></>}/>
         <Route path='/contacto' element={<Contacto/>} />
         <Route path='/destino' element={< Destino/>} />
         <Route path='/destinos' element={< Destinos/>} />
@@ -35,6 +41,7 @@ function App() {
         <Route path='*' element={< NotFound/>} />
       </Routes>
       <Footer/>
+      </UserProvider>
       </Context>
     </>
   ) 
