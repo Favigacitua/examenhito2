@@ -14,6 +14,7 @@ import { NotFound } from './assets/vistas/NotFound/NotFound'
 import { NavBar } from './assets/componentes/Navbar/Navbar'
 import { Footer } from './assets/componentes/Footer/Footer'
 import { Context } from './Context/Context'
+import OnGoing from './assets/vistas/OnGoing/OnGoing'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,6 +34,7 @@ function App() {
         <Route path='/perfil' element={< Perfil/>} />
         <Route path='/register' element={< Register/>} />
         <Route path='*' element={< NotFound/>} />
+        <Route path='/ongoing' element={< OnGoing/>} />
       </Routes>
       <Footer/>
       </Context>

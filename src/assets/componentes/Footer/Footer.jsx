@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF,faTwitter, faInstagram,faLinkedinIn,faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons'; 
@@ -32,38 +33,38 @@ export const Footer = () => {
         </div>
         <br />
         <div className='nautilus' >
-          <img src='/logo.jpeg' alt='logo nautilus prestige' />
+          <img src='/logoblanco.jpg' alt='logo nautilus prestige' />
         </div>
         <br />
         <div className='opciones'>
         <div>
-        <h3>Productos</h3>
-        <br />
-        <a href="#caracteristicas" className="custom-link">Características</a>
-        <a href="#precios" className="custom-link">Precios</a>
-        <a href="#reseñas" className="custom-link">Reseñas</a>
-        <a href="#actualizaciones" className="custom-link">Actualizaciones</a>
-        </div>
-        <br />
+  <h3>Productos</h3>
+  <br />
+  <NavLink to="/ongoing" className="custom-link">Características</NavLink>
+  <NavLink to="/ongoing" className="custom-link">Precios</NavLink>
+  <NavLink to="/ongoing" className="custom-link">Reseñas</NavLink>
+  <NavLink to="/ongoing" className="custom-link">Actualizaciones</NavLink>
+</div>
+<br />
 
-        <div>
-        <h3>Nosotros</h3>
-        <br />
-        <a href="#sobreNosotros" className="custom-link">Sobre nosotros</a>
-        <a href="#contacto" className="custom-link">Contacto</a>
-        <a href="#asesoramiento" className="custom-link">Asesoramiento</a>
-        <a href="#blog" className="custom-link">Blog</a>
-        </div>
-        <br />
+<div>
+  <h3>Nosotros</h3>
+  <br />
+  <NavLink to="/ongoing" className="custom-link">Sobre nosotros</NavLink>
+  <NavLink to="/ongoing" className="custom-link">Contacto</NavLink>
+  <NavLink to="/ongoing" className="custom-link">Asesoramiento</NavLink>
+  <NavLink to="/ongoing" className="custom-link">Blog</NavLink>
+</div>
+<br />
 
-        <div>
-        <h3>Soporte</h3>
-        <br />
-        <a href="#empieza" className="custom-link">Empieza por aquí</a>
-        <a href="#centro-ayuda" className="custom-link">Centro de ayuda</a>
-        <a href="#reporta-problema" className="custom-link">Reporta un problema</a>
-        <a href="#chatea" className="custom-link">Chatea con nosotros</a>
-        </div>
+<div>
+  <h3>Soporte</h3>
+  <br />
+  <NavLink to="/ongoing" className="custom-link">Empieza por aquí</NavLink>
+  <NavLink to="/ongoing" className="custom-link">Centro de ayuda</NavLink>
+  <NavLink to="/ongoing" className="custom-link">Reporta un problema</NavLink>
+  <NavLink to="/ongoing" className="custom-link">Chatea con nosotros</NavLink>
+</div>
         <br />
         <div >
           <h3 style={{paddingBottom: '1rem'}}>Contactanos</h3>
