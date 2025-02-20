@@ -15,7 +15,7 @@ export const NotFound = () => {
         }>No encontramos la pagina, </p>
         <p>ni a los tripulantes en el servidor.</p>
         <div className='notFoundImg' >
-        <img src="./notfound.jpg" alt='' style={{width:'75%'}}/>
+        <img src="./notfound.jpg" alt='' style={{width:'71%', paddingTop:'3rem'}}/>
       </div>
 
         <Button size="sm" style={{marginTop:'1rem', padding:'10px',backgroundColor: '#0DBCAD', border: '2px solid #0DBCAD' }
