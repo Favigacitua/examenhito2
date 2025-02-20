@@ -17,6 +17,7 @@ import { Context } from './Context/Context'
 import { UserProvider } from './Context/UserContext'
 import Home from './assets/componentes/Home/Home'
 import { useLocation } from 'react-router-dom';
+import OnGoing from './assets/vistas/OnGoing/OnGoing'
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path='/perfil' element={< Perfil/>} />
         <Route path='/register' element={< Register/>} />
         <Route path='*' element={< NotFound/>} />
+        <Route path='/ongoing' element={< OnGoing/>} />
       </Routes>
       <Footer/>
       </UserProvider>
