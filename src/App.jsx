@@ -26,8 +26,11 @@ function App() {
   return (
     <>
     <Context>
+
+      
       <UserProvider>
-      {location.pathname !== '/' && <NavBar />}
+      {location.pathname !== '/' && <NavBar />},
+      
       
       <Routes>     
         <Route path='/' element= {<><Home/><Inicio/></>}/>
