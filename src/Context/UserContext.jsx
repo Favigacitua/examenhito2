@@ -138,6 +138,103 @@ export const UserProvider = ({ children }) => {
     }
   };
 
+  const postReview = async (data) => {
+    try {
+      const response = await fetch('http://localhost:3000/resenas', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        console.log('Reseña enviada correctamente');
+        return { success: true };
+      } else {
+        return { success: false, message: result.message || 'Error al enviar la reseña.' };
+      }
+    } catch (error) {
+      return { success: false, message: error.message };
+    }
+  };
+
+  const favoritos = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/favoritos', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        return { success: true, favorites: data };
+      } else {
+        return { success: false, message: 'Error al obtener favoritos.' };
+      }
+    } catch (error) {
+      return { success: false, message: error.message };
+    }
+  };
+
+  const addFavoritos = async (destinoId) => {
+    try {
+      const response = await fetch('http://localhost:3000/favoritos', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`, // Utilizas el token para la autenticación
+        },
+        body: JSON.stringify({ destinoId }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setUser(prevUser => ({
+          ...prevUser,
+          favorites: [...prevUser.favorites, { id: destinoId }] // Asegúrate de agregar el destino correctamente
+        }));
+        console.log('Destino añadido a favoritos');
+        return { success: true };
+      } else {
+        return { success: false, message: result.message || 'Error al añadir a favoritos.' };
+      }
+    } catch (error) {
+      return { success: false, message: error.message };
+    }
+  };
+
+  const removeFavoritos = async (destinoId) => {
+    try {
+      const response = await fetch(`http://localhost:3000/favoritos/${destinoId}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        console.log('Destino eliminado de favoritos');
+        return { success: true };
+      } else {
+        return { success: false, message: result.message || 'Error al eliminar de favoritos.' };
+      }
+    } catch (error) {
+      return { success: false, message: error.message };
+    }
+  };
+
+
+
   const value = {
     token,
     user,
@@ -146,10 +243,15 @@ export const UserProvider = ({ children }) => {
     logout,
     fetchUserProfile,
     updateUserProfile,
+    postReview,          
+    favoritos,      
+    addFavoritos,         
+    removeFavoritos,    
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
 
-export default UserContext;
+
+export default UserContext; 
 

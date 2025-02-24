@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { UserContext } from "../../../Context/UserContext"; // Para obtener el token del usuario
+import  UserContext from "../../../Context/UserContext"; // Para obtener el token del usuario
 import "./editarperfil.css";
 
 export const EditarPerfil = () => {

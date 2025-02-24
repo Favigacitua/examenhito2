@@ -7,7 +7,7 @@ export const Contacto = () => {
   return (
     <div>
       
-    <h1 className='titulo'>Contactanos!!</h1>
+    <h1 className='titulo' style={{color:'#0DBCAD'}}>Contactanos!!</h1>
     
     <Form className='formulariocontacto' >     
      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

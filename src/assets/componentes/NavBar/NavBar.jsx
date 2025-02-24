@@ -68,22 +68,30 @@ export const NavBar = () => {
 
                 {token ? (
                   <>
-                    <Nav.Link
-                      as={NavLink}
-                      to="/profile"
-                      onClick={handleClose}
-                      className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"}
-                    >
-                      Perfil
-                    </Nav.Link>
-                    <Button
-                      className="loginButton"
-                      style={{ backgroundColor: '#0DBCAD', border: '2px solid #0DBCAD' }}
-                      onClick={() => { logout(); handleClose(); }} // Cierra al cerrar sesión
-                    >
-                      Cerrar sesión
-                    </Button>
-                  </>
+                  <Nav.Link
+                    as={NavLink}
+                    to="/favoritos"  
+                    onClick={handleClose}
+                    className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"}
+                  >
+                    Favoritos  // CAMBIO: Cambié el texto a Favoritos
+                  </Nav.Link>
+                  <Nav.Link
+                    as={NavLink}
+                    to="/profile"
+                    onClick={handleClose}
+                    className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"}
+                  >
+                    Perfil
+                  </Nav.Link>
+                  <Button
+                    className="loginButton"
+                    style={{ backgroundColor: '#0DBCAD', border: '2px solid #0DBCAD' }}
+                    onClick={() => { logout(); handleClose(); }} // Cierra al cerrar sesión
+                  >
+                    Cerrar sesión
+                  </Button>
+                </>
                 ) : (
                   <>
                     <Nav.Link

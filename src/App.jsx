@@ -6,7 +6,7 @@ import { Contacto } from './assets/vistas/Contacto/Contacto'
 import { Destino } from './assets/vistas/Destino/Destino'
 import { Destinos } from './assets/vistas/Destinos/Destinos'
 import { EditarPerfil } from './assets/vistas/EditarPerfil/EditarPerfil'
-import { Favoritos } from './assets/vistas/Favoritos/Favoritos'
+import  Favoritos  from './assets/vistas/Favoritos/Favoritos'
 import { Login } from './assets/vistas/Login/Login'
 import { Perfil } from './assets/vistas/Perfil/Perfil'
 import { Register } from './assets/vistas/Register/Register'
@@ -29,13 +29,13 @@ function App() {
 
       
       <UserProvider>
-      {location.pathname !== '/' && <NavBar />},
+      {location.pathname !== '/' && <NavBar />}
       
       
       <Routes>     
         <Route path='/' element= {<><Home/><Inicio/></>}/>
         <Route path='/contacto' element={<Contacto/>} />
-        <Route path='/destino' element={< Destino/>} />
+        <Route path="/viaje/:id" element={<Destino />} />
         <Route path='/destinos' element={< Destinos/>} />
         <Route path='/editarperfil' element={< EditarPerfil/>} />
         <Route path='/favoritos' element={< Favoritos/>} />

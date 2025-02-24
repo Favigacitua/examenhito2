@@ -1,17 +1,18 @@
 .homestyle {
-    background-image: url('/fondocrusero.png');
-    background-size: 100% auto;
-    background-position: top left;
-    height: 100vh;
-    width: 100vw;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-    padding: 0px;
-    color: white; 
-    gap: auto;
-  }
+  background-image: url('/fondocrusero.png');
+  background-size: cover; /* Ajusta la imagen para que esté completamente visible */
+  background-position: center center; /* Asegura que el centro de la imagen siempre esté visible */
+  width: 100vw;
+  height: auto; /* Hacer que la altura sea 100% de la ventana */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: clamp(6rem, 10vh + 2rem, 38rem); /* Ajuste de padding con clamp */
+  color: white;
+  gap: auto;
+}
 
   .formulario-contenedor {
     display: block !important; /* Bloquear la herencia de flex */
@@ -21,19 +22,17 @@
 }
 
 .bajadanavbar {
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
   max-width: 1400px;
-  
-  
-  /* Aumenta la separación entre elementos dinámicamente */
-  gap: clamp(1px, 2vw, 80px);
+  padding-bottom:2rem;
 
-  /* Ajusta el margen izquierdo de forma responsiva */
+  gap: clamp(1px, 2vw, 80px); 
   padding-left: clamp(10px, 3vw, 150px);
+  
 }
 
 .vamonos {
