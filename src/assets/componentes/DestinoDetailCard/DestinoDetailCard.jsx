@@ -4,7 +4,7 @@ import { MyContext } from '../../../Context/Context';
 import {UserContext } from '../../../Context/UserContext'
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from "react-bootstrap/Button";
-import './destinoDetailCard.css';
+import './destinodetailcard.css';
 
 export const DestinoDetailCard = () => {
   const { cruceros } = useContext(MyContext);
