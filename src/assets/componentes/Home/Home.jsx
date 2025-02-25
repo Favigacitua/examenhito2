@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import { useUserContext } from '../../../Context/UserContext';
-import FormularioFecha from '../FormularioFecha/FormularioFecha';
-import './home.css';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import { useUserContext } from "../../../Context/UserContext";
+import FormularioFecha from "../FormularioFecha/FormularioFecha";
+import "./home.css";
 
 export const Home = () => {
   const { token, logout } = useUserContext();
@@ -16,28 +16,48 @@ export const Home = () => {
     console.log("Login Button Clicked");
   };
 
-  // Estado para controlar el Offcanvas
   const [showOffcanvas, setShowOffcanvas] = useState(false);
 
   const handleClose = () => setShowOffcanvas(false);
   const handleShow = () => setShowOffcanvas(true);
 
   return (
-    <div className='homestyle'>
+    <div className="homestyle">
       <div>
-        <Navbar expand="md"  className="navbarhome" style={{ backgroundColor: 'transparent', boxShadow: 'none', paddingBottom:'0px' }}>
-          <Container fluid style={{ padding: '0px', marginLeft: '1rem', marginRight: '1rem', width: '100vw', height: '2rem' }}>
-          <Navbar.Brand
-          
-            as={NavLink}
-            to="/"
-            end
-            className= {({ isActive }) => isActive ? "navbar-brand active-link" : "navbar-brand"}
-            style={{ fontWeight: 'bold', color:'white' }}
+        <Navbar
+          expand="md"
+          className="navbarhome"
+          style={{
+            backgroundColor: "transparent",
+            boxShadow: "none",
+            paddingBottom: "0px",
+          }}
+        >
+          <Container
+            fluid
+            style={{
+              padding: "0px",
+              marginLeft: "1rem",
+              marginRight: "1rem",
+              width: "100vw",
+              height: "2rem",
+            }}
           >
-            Nautilus Prestige
-          </Navbar.Brand>
-            <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" onClick={handleShow} />
+            <Navbar.Brand
+              as={NavLink}
+              to="/"
+              end
+              className={({ isActive }) =>
+                isActive ? "navbar-brand active-link" : "navbar-brand"
+              }
+              style={{ fontWeight: "bold", color: "white" }}
+            >
+              Nautilus Prestige
+            </Navbar.Brand>
+            <Navbar.Toggle
+              aria-controls="offcanvasNavbar-expand-md"
+              onClick={handleShow}
+            />
             <Navbar.Offcanvas
               id="offcanvasNavbar-expand-md"
               aria-labelledby="offcanvasNavbarLabel-expand-md"
@@ -50,16 +70,20 @@ export const Home = () => {
                   <Nav.Link
                     as={NavLink}
                     to="/destinos"
-                    onClick={handleClose} // Cierra el offcanvas al hacer clic
-                    className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"}
+                    onClick={handleClose}
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active-link" : "nav-link"
+                    }
                   >
                     Destinos
                   </Nav.Link>
                   <Nav.Link
                     as={NavLink}
                     to="/contacto"
-                    onClick={handleClose} // Cierra el offcanvas al hacer clic
-                    className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"}
+                    onClick={handleClose}
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active-link" : "nav-link"
+                    }
                   >
                     Contacto
                   </Nav.Link>
@@ -69,15 +93,23 @@ export const Home = () => {
                       <Nav.Link
                         as={NavLink}
                         to="/profile"
-                        onClick={handleClose} // Cierra el offcanvas al hacer clic
-                        className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"}
+                        onClick={handleClose}
+                        className={({ isActive }) =>
+                          isActive ? "nav-link active-link" : "nav-link"
+                        }
                       >
                         Perfil
                       </Nav.Link>
                       <Button
-                        className='loginButton'
-                        style={{ backgroundColor: '#0DBCAD', border: '2px solid #0DBCAD' }}
-                        onClick={() => { logout(); handleClose(); }} // Cierra al cerrar sesión
+                        className="loginButton"
+                        style={{
+                          backgroundColor: "#0DBCAD",
+                          border: "2px solid #0DBCAD",
+                        }}
+                        onClick={() => {
+                          logout();
+                          handleClose();
+                        }}
                       >
                         Cerrar sesión
                       </Button>
@@ -87,17 +119,25 @@ export const Home = () => {
                       <Nav.Link
                         as={NavLink}
                         to="/register"
-                        onClick={handleClose} // Cierra el offcanvas al hacer clic
-                        className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"}
+                        onClick={handleClose}
+                        className={({ isActive }) =>
+                          isActive ? "nav-link active-link" : "nav-link"
+                        }
                       >
                         Registrarse
                       </Nav.Link>
                       <Button
-                        className='loginButton'
-                        style={{ backgroundColor: '#0DBCAD', border: '2px solid #0DBCAD' }}
+                        className="loginButton"
+                        style={{
+                          backgroundColor: "#0DBCAD",
+                          border: "2px solid #0DBCAD",
+                        }}
                         as={NavLink}
                         to="/login"
-                        onClick={() => { handleLoginClick(); handleClose(); }} // Cierra al hacer clic
+                        onClick={() => {
+                          handleLoginClick();
+                          handleClose();
+                        }}
                       >
                         Iniciar Sesion
                       </Button>
@@ -108,18 +148,24 @@ export const Home = () => {
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
-        <div className='bajadanavbar'>
-  <div>
-    <img src='/viajaconnosotros.png' alt='viaja-con-nosotros' className='viajaconnosotros' />
-  </div>
-  <div className='contenttext'>
-    <img src='/vamonos.png' alt='vamonos' className='vamonos' />
-    <p className='bajadatitulo'>Elije una fecha y nosotros cumplimos tus sueños</p>
-  </div>
-  <div className='formulariofecha'>
-    <FormularioFecha />
-  </div>
-</div>
+        <div className="bajadanavbar">
+          <div>
+            <img
+              src="/viajaconnosotros.png"
+              alt="viaja-con-nosotros"
+              className="viajaconnosotros"
+            />
+          </div>
+          <div className="contenttext">
+            <img src="/vamonos.png" alt="vamonos" className="vamonos" />
+            <p className="bajadatitulo">
+              Elije una fecha y nosotros cumplimos tus sueños
+            </p>
+          </div>
+          <div className="formulariofecha">
+            <FormularioFecha />
+          </div>
+        </div>
       </div>
     </div>
   );

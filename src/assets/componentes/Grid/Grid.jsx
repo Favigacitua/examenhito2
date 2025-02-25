@@ -4,7 +4,7 @@ import CardViaje from '../CardViaje/CardViaje';
 import './grid.css';
 
 export const Grid = ({ maxItems }) => {
-  const { viajes } = useContext(MyContext);  // Accede a 'viajes' desde el contexto
+  const { viajes } = useContext(MyContext);  
   console.log(viajes);
 
   return (

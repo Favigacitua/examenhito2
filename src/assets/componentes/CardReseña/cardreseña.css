@@ -1,16 +1,16 @@
 .reseñas-container {
     display: grid;
-    grid-template-columns: 1fr; /* Las columnas se ajustan automáticamente */
-    gap: 16px; /* Espacio entre las tarjetas */
-    padding: 20px; /* Espaciado alrededor del contenedor */
+    grid-template-columns: 1fr; 
+    gap: 16px;
+    padding: 20px; 
    margin: auto;
    width: 50%;
    align-items: center;
   }
   
   .reseñas {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: Agregar sombra a las tarjetas */
-    border-radius: 8px; /* Bordes redondeados para las tarjetas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
     width: 18rem;  
 }
 
@@ -19,12 +19,12 @@
   
   @media (min-width: 700px) {
     .reseñas-container {
-      grid-template-columns: repeat(2, 1fr); /* En pantallas grandes ajusta a un tamaño mínimo de 350px */
+      grid-template-columns: repeat(2, 1fr); 
     }
   }
 
   @media (min-width: 1200px) {
     .reseñas-container {
-      grid-template-columns: repeat(4, 1fr); /* En pantallas grandes ajusta a un tamaño mínimo de 350px */
+      grid-template-columns: repeat(4, 1fr); 
     }
   }

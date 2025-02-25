@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';  
 import { MyContext } from '../../../Context/Context';
-import UserContext  from '../../../Context/UserContext'
+import {UserContext } from '../../../Context/UserContext'
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from "react-bootstrap/Button";
 import './destinoDetailCard.css';

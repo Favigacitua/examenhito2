@@ -1,7 +1,7 @@
-import React, { useState, useContext } from 'react'; // Importar useContext
+import React, { useState, useContext } from 'react'; 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import UserContext from "../../../Context/UserContext";  // Importar el contexto correctamente
+import {UserContext} from "../../../Context/UserContext"; 
 import './login.css'
 
 
@@ -10,10 +10,10 @@ export const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
 
-  // Usar useContext para acceder a los valores del UserContext
-  const { login } = useContext(UserContext); // Aquí usamos el hook useContext correctamente
+  
+  const { login } = useContext(UserContext);
 
-  // Maneja el cambio de inputs
+  
   const onInputChange = ({ target }) => {
     const { value, name } = target;
     if (name === 'email') {
@@ -23,7 +23,7 @@ export const Login = () => {
     }
   };
 
-  // Maneja el envío del formulario
+  
   const onSubmitHandler = async (event) => {
     event.preventDefault();
 
@@ -37,7 +37,7 @@ export const Login = () => {
       return;
     }
 
-    // Llamamos a la función login desde el UserContext
+    
     const response = await login(email, password);
 
     if (!response.success) {
@@ -47,7 +47,7 @@ export const Login = () => {
       alert('Has ingresado correctamente');
     }
 
-    // Limpiar campos después del envío
+   
     setEmail('');
     setPassword('');
   };

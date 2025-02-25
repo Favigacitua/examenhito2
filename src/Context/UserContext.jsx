@@ -28,9 +28,21 @@ export const UserProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    localStorage.setItem('token', JSON.stringify(token));
-    localStorage.setItem('user', JSON.stringify(user));
+    if (token) {
+      localStorage.setItem('token', JSON.stringify(token));
+    } else {
+      localStorage.removeItem('token');
+    }
+    
+    if (user) {
+      localStorage.setItem('user', JSON.stringify(user));
+    } else {
+      localStorage.removeItem('user');
+    }
   }, [token, user]);
+
+
+ 
 
   const register = async (nombre, apellido, email, password) => {
     try {
@@ -189,7 +201,7 @@ export const UserProvider = ({ children }) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`, // Utilizas el token para la autenticación
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({ destinoId }),
       });
@@ -199,7 +211,7 @@ export const UserProvider = ({ children }) => {
       if (response.ok) {
         setUser(prevUser => ({
           ...prevUser,
-          favorites: [...prevUser.favorites, { id: destinoId }] // Asegúrate de agregar el destino correctamente
+          favorites: [...prevUser.favorites, { id: destinoId }]
         }));
         console.log('Destino añadido a favoritos');
         return { success: true };
@@ -253,5 +265,5 @@ export const UserProvider = ({ children }) => {
 };
 
 
-export default UserContext; 
+export {UserContext}; 
 

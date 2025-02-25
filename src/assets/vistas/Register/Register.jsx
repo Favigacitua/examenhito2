@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import UserContext from "../../../Context/UserContext";  // Importamos el UserContext
+import {UserContext} from "../../../Context/UserContext"; 
 import './register.css'
 
 export const Register = () => {
@@ -12,10 +12,10 @@ export const Register = () => {
     const [lastName, setLastName] = useState('');
     const [error, setError] = useState(false);
 
-    // Usamos useContext para acceder al contexto y la función register
+   
     const { register } = useContext(UserContext);
 
-    // Maneja los cambios de los inputs
+    
     function onInputChange({ target }) {
         const { value, name } = target;
 
@@ -32,11 +32,11 @@ export const Register = () => {
         }
     }
 
-    // Maneja el envío del formulario
+   
     async function onSubmitHandler(event) {
         event.preventDefault();
 
-        // Validaciones
+        
         if (email === '' || password === '' || password2 === '' || firstName === '' || lastName === '') {
             setError('Todos los campos son obligatorios');
             alert('Todos los campos son obligatorios');
@@ -51,7 +51,7 @@ export const Register = () => {
             return;
         }
 
-        // Llamamos a la función register desde UserContext con todos los datos
+        
         const response = await register(email, password, firstName, lastName);
 
         if (!response.success) {
@@ -61,7 +61,7 @@ export const Register = () => {
             alert('Te has registrado correctamente');
         }
 
-        // Limpiar campos después del envío
+        
         setEmail('');
         setPassword('');
         setPassword2('');

@@ -1,22 +1,21 @@
 .homestyle {
   background-image: url('/fondocrusero.png');
-  background-size: cover; /* Ajusta la imagen para que esté completamente visible */
-  background-position: center center; /* Asegura que el centro de la imagen siempre esté visible */
+  background-size: cover; 
+  background-position: center center;
   width: 100vw;
-  height: auto; /* Hacer que la altura sea 100% de la ventana */
+  height: auto; 
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   margin: 0px;
   padding: 0px;
-  padding-bottom: clamp(6rem, 10vh + 2rem, 38rem); /* Ajuste de padding con clamp */
+  padding-bottom: clamp(6rem, 10vh + 2rem, 38rem);
   color: white;
   gap: auto;
 }
 
   .formulario-contenedor {
-    display: block !important; /* Bloquear la herencia de flex */
-    width: 100%;
+    display: block !important; 
     flex-grow: 1;
 
 }
@@ -36,7 +35,7 @@
 }
 
 .vamonos {
-  width: clamp(120px, 30vw, 600px); /* Asegura que la imagen escale bien */
+  width: clamp(120px, 30vw, 600px); 
   height: auto;
 }
 

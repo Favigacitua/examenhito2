@@ -9,7 +9,7 @@ import "./perfil.css";
 export const Perfil = () => {
   const misDestinos = useRef(null);
   const mispublicaciones = useRef(null);
-  const { user, token, fetchUserProfile } = useUserContext(); // Obtener datos del contexto
+  const { user, token, fetchUserProfile } = useUserContext(); 
   const [nombre, setNombre] = useState("");
   const [destino, setDestino] = useState("");
   const [calificacion, setCalificacion] = useState("");

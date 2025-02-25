@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import  UserContext from "../../../Context/UserContext"; // Para obtener el token del usuario
+import  {UserContext} from "../../../Context/UserContext"; 
 import "./editarperfil.css";
 
 export const EditarPerfil = () => {
-  const { token } = useContext(UserContext); // Obtener el token del contexto
+  const { token } = useContext(UserContext); 
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -44,7 +44,7 @@ export const EditarPerfil = () => {
       const response = await fetch("https://tu-servidor/api/editar-perfil", {
         method: "PUT",
         headers: {
-          Authorization: `Bearer ${token}`, // Enviar el token JWT
+          Authorization: `Bearer ${token}`, 
         },
         body: formDataToSend,
       });
