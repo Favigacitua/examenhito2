@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';  
 import { MyContext } from '../../../Context/Context';
+import UserContext  from '../../../Context/UserContext'
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from "react-bootstrap/Button";
 import './destinoDetailCard.css';
@@ -8,7 +9,7 @@ import './destinoDetailCard.css';
 export const DestinoDetailCard = () => {
   const { cruceros } = useContext(MyContext);
   const { id } = useParams();  
-  const { addFavoritos } = useContext(MyContext); // Asegúrate de acceder correctamente a addFavoritos
+  const { addFavoritos } = useContext(UserContext); 
   const [crucero, setCrucero] = useState(null);
 
   useEffect(() => {
@@ -20,9 +21,9 @@ export const DestinoDetailCard = () => {
     return <p>Cargando detalles del crucero...</p>;  
   }
 
-  // Función para añadir el destino a los favoritos
+  
   const handleAddToFavorites = () => {
-    addFavoritos(crucero.id);  // Llamada a la función de agregar a favoritos
+    addFavoritos(crucero.id);  
   };
 
   return (

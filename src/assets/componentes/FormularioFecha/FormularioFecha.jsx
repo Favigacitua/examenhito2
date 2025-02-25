@@ -6,43 +6,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faLocationDot, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import './formularioFecha.css';
 
-
 const FormularioFecha = () => {
   const [destino, setDestino] = useState('');
   const [fechaInicio, setFechaInicio] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Destino:", destino);
-    console.log("Fecha de inicio:", fechaInicio);
-  };
-
   return (
-    <Container className='formulario' >
-      {/* Formulario para destino */}
-      <Form onSubmit={handleSubmit}>
+    <Container className='formulario'>
+      <Form>
         <Form.Group controlId="destino" className='destino'>
-        <FontAwesomeIcon icon={faLocationDot} style={{margin:'auto'}}/>
+          <FontAwesomeIcon icon={faLocationDot} style={{ margin: 'auto' }} />
           <Form.Control
             type="text"
             placeholder="Destino"
-            value={destino}s
+            value={destino}
             onChange={(e) => setDestino(e.target.value)}
             className="form-control"
             style={{
-                backgroundColor: 'transparent',
-                border: 'none',
-                color: 'white' // Asegúrate de que el texto sea visible
-              }}
+              backgroundColor: 'transparent',
+              border: 'none',
+              color: 'white'
+            }}
           />
         </Form.Group>
       </Form>
-      <p style={{color:'white',margin:'5px',}}>|</p>
 
-      {/* Formulario para fecha de inicio */}
-      <Form onSubmit={handleSubmit}>
+      <p style={{ color: 'white', margin: '5px', }}>|</p>
+
+      <Form>
         <Form.Group controlId="fechaInicio" className='inicio'>
-        <FontAwesomeIcon icon={faCalendarDays} style={{margin:'auto'}}/>
+          <FontAwesomeIcon icon={faCalendarDays} style={{ margin: 'auto' }} />
           <DatePicker
             selected={fechaInicio}
             onChange={(date) => setFechaInicio(date)}
@@ -53,9 +45,8 @@ const FormularioFecha = () => {
         </Form.Group>
       </Form>
 
-      {/* Botón de envío */}
-      <Button  type="submit" className='button'  style={{backgroundColor:'#0DBCAD', border: '2px solid #0DBCAD', display: 'flex', alignItems: 'center',justifyContent: 'center'}}>
-      <FontAwesomeIcon icon={faMagnifyingGlass} className='buttonicon' style={{textAlign:'center'}}/>
+      <Button type="submit" className='button' style={{ backgroundColor: '#0DBCAD', border: '2px solid #0DBCAD', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <FontAwesomeIcon icon={faMagnifyingGlass} className='buttonicon' style={{ textAlign: 'center' }} />
       </Button>
     </Container>
   );

@@ -8,37 +8,25 @@ export const Context = ({ children }) => {
   const [viajes, setViajes] = useState([]);
 
   useEffect(() => {
-    fetchCruceros();
-  }, []);
-
-  const fetchCruceros = async () => {
-    try {
-      const response = await fetch('/cruceros.json');
-      const data = await response.json();
-      console.log("Cruceros cargados desde JSON:", data);
-      setCruceros(data.cruceros);
-    } catch (error) {
-      console.error("Error al obtener los cruceros:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
- 
-  useEffect(() => {
-    // Cargar el archivo cruceros.json
-    const fetchViajes = async () => {
+    
+    const fetchData = async () => {
       try {
-        const response = await fetch('/cruceros.json'); // Ruta al archivo JSON en la carpeta public
-        const data = await response.json(); // Convertir la respuesta en JSON
-        setViajes(data.cruceros); // Ahora accedemos a la clave 'cruceros' del JSON
+        const response = await fetch('/cruceros.json');
+        const data = await response.json();
+        console.log("Cruceros cargados desde JSON:", data);
+        
+        setCruceros(data.cruceros);  
+        setViajes(data.cruceros);     
       } catch (error) {
-        console.error('Error al obtener los viajes:', error);
-        setViajes([]); // En caso de error, dejamos el estado vacío
+        console.error("Error al obtener los cruceros:", error);
+      } finally {
+        setLoading(false);
       }
     };
-    fetchViajes();
-  }, [])
+
+    fetchData(); 
+
+  }, []); 
 
   const globalState = {
     cruceros,

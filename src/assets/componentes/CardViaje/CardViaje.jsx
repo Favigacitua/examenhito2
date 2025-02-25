@@ -22,6 +22,3 @@ function CardViaje({ viaje }) {
 }
 
 export default CardViaje;
-
-
-
