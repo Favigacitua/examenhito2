@@ -9,6 +9,7 @@ export const Context = ({ children }) => {
   const [viajes, setViajes] = useState([]);
   const [filtroDestino, setFiltroDestino] = useState('');
   const [filtroFecha, setFiltroFecha] = useState(null);
+  const [mensajeEnviado, setMensajeEnviado] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -87,6 +88,27 @@ export const Context = ({ children }) => {
     }
   }, [filtroDestino, filtroFecha]);
 
+
+
+  const enviarFormularioContacto = async (formData) => {
+    try {
+      const response = await fetch('http://localhost:3000/api/contacto', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setMensajeEnviado({ success: true, message: 'Mensaje enviado con éxito' });
+      } else {
+        setMensajeEnviado({ success: false, message: 'Error al enviar el mensaje' });
+      }
+    } catch (error) {
+      setMensajeEnviado({ success: false, message: 'No se pudo enviar el mensaje, intenta nuevamente.' });
+      console.error("Error al enviar el formulario de contacto:", error);
+    }
+  };
+
   const globalState = {
     cruceros,
     loading,
@@ -96,7 +118,10 @@ export const Context = ({ children }) => {
     actualizarFiltroDestino,
     actualizarFiltroFecha,
     resetFiltros,
-    resetViajes 
+    resetViajes,
+    enviarFormularioContacto, 
+    mensajeEnviado
+
   };
 
   return (
